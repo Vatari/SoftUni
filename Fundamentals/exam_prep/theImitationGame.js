@@ -1,4 +1,4 @@
-function solve(text) {
+function solve(arr) {
   /*     You are a mathematician during world war 2, who has joined the cryptography team to decipher the enemy's enigma code. 
     Your job is to create a program to crack the codes. 
     On the first line of the input you will receive the encrypted message. After that, until the "Decode" command is given, 
@@ -16,5 +16,34 @@ function solve(text) {
     Output
     •	After the "Decode" command is received, print this message:
         "The decrypted message is: {message}" */
+
+  let encryptedMessage = arr.shift();
+  let result = [];
+
+  while (arr[0] != "Decode") {
+    let tokens = arr.shift().split("|");
+    let command = tokens[0];
+
+    if (command === "Insert") {
+      let index = Number(tokens[1]);
+      let value = tokens[2];
+      encryptedMessage =
+        encryptedMessage.substring(0, index) +
+        value +
+        encryptedMessage.substring(index);
+    }
+    if (command === "Move") {
+      let numberOfLetters = Number(tokens[1]);
+      encryptedMessage =
+        encryptedMessage.substring(numberOfLetters) +
+        encryptedMessage.substring(0, numberOfLetters);
+    }
+    if (command === "ChangeAll") {
+      let substring = tokens[1];
+      let replacement = tokens[2];
+      encryptedMessage = encryptedMessage.split(substring).join(replacement);
+    }
+  }
+  console.log(`The decrypted message is: ${encryptedMessage}`);
 }
 solve(["zzHe", "ChangeAll|z|l", "Insert|2|o", "Move|3", "Decode"]);
