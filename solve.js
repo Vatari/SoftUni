@@ -1,6 +1,5 @@
 function solve(arr) {
   let encryptedText = arr.shift();
-  let text;
 
   while (arr[0] != "Decode") {
     let tokens = arr.shift().split("|");
@@ -8,8 +7,7 @@ function solve(arr) {
 
     if (command === "Move") {
       encryptedText = Move(encryptedText, tokens[1]);
-
-     } else if (command === "Insert") {
+    } else if (command === "Insert") {
       encryptedText = Insert(encryptedText, tokens[1], tokens[2]);
     } else if (command === "ChangeAll") {
       encryptedText = ChangeAll(encryptedText, tokens[1], tokens[2]);
