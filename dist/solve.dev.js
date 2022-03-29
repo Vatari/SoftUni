@@ -15,18 +15,14 @@ function solve(arr) {
       }
 
       console.log(newPass);
-    }
-
-    if (command[0] === "Cut") {
+    } else if (command[0] === "Cut") {
       var index = +command[1];
       var length = index + +command[2];
       var cutA = newPass.substring(0, index);
       var cutB = newPass.substring(length);
       newPass = cutA + cutB;
       console.log(newPass);
-    }
-
-    if (command[0] === "Substitute") {
+    } else if (command[0] === "Substitute") {
       var str = command[1];
       var replacer = command[2];
 

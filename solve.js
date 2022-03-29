@@ -3,7 +3,6 @@ function solve(arr) {
 
   let newPass = "";
   while (arr[0] != "Done") {
-
     let command = arr.shift().split(" ");
 
     if (command[0] === "TakeOdd") {
@@ -13,16 +12,14 @@ function solve(arr) {
         }
       }
       console.log(newPass);
-    }
-    if (command[0] === "Cut") {
+    } else if (command[0] === "Cut") {
       let index = +command[1];
       let length = index + +command[2];
       let cutA = newPass.substring(0, index);
       let cutB = newPass.substring(length);
       newPass = cutA + cutB;
       console.log(newPass);
-    }
-    if (command[0] === "Substitute") {
+    } else if (command[0] === "Substitute") {
       let str = command[1];
       let replacer = command[2];
       if (newPass.includes(str)) {
