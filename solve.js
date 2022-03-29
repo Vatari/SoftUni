@@ -1,35 +1,54 @@
 function solve(arr) {
-  let encryptedText = arr.shift();
+  let rawPassword = arr.shift();
 
-  while (arr[0] != "Decode") {
-    let tokens = arr.shift().split("|");
-    command = tokens[0];
+  let newPass = "";
+  while (arr[0] != "Done") {
 
-    if (command === "Move") {
-      encryptedText = Move(encryptedText, tokens[1]);
-    } else if (command === "Insert") {
-      encryptedText = Insert(encryptedText, tokens[1], tokens[2]);
-    } else if (command === "ChangeAll") {
-      encryptedText = ChangeAll(encryptedText, tokens[1], tokens[2]);
+    let command = arr.shift().split(" ");
+
+    if (command[0] === "TakeOdd") {
+      for (i = 0; i < rawPassword.length; i++) {
+        if (i % 2 != 0) {
+          newPass += rawPassword[i];
+        }
+      }
+      console.log(newPass);
+    }
+    if (command[0] === "Cut") {
+      let index = +command[1];
+      let length = index + +command[2];
+      let cutA = newPass.substring(0, index);
+      let cutB = newPass.substring(length);
+      newPass = cutA + cutB;
+      console.log(newPass);
+    }
+    if (command[0] === "Substitute") {
+      let str = command[1];
+      let replacer = command[2];
+      if (newPass.includes(str)) {
+        newPass = newPass.split(str).join(replacer);
+        console.log(newPass);
+      } else {
+        console.log(`Nothing to replace!`);
+        break;
+      }
     }
   }
-
-  function Move(text, num) {
-    let half = text.substring(0, num);
-    let right = text.substring(num);
-    text = right + half;
-    return text;
-  }
-  function Insert(text, num, value) {
-    let half = text.substring(0, num);
-    let right = text.substring(num);
-    text = half + value + right;
-    return text;
-  }
-  function ChangeAll(text, str, replacement) {
-    text = text.split(str).join(replacement);
-    return text;
-  }
-  console.log(`The decrypted message is: ${encryptedText}`);
+  console.log(`Your password is: ${newPass}`);
 }
-solve(["zzHe", "ChangeAll|z|l", "Insert|2|o", "Move|3", "Decode"]);
+solve([
+  "Siiceercaroetavm!:?:ahsott.:i:nstupmomceqr",
+  "TakeOdd",
+  "Cut 15 3",
+  "Substitute :: -",
+  "Substitute | ^",
+  "Done",
+]);
+solve([
+  "up8rgoyg3r1atmlmpiunagt!-irs7!1fgulnnnqy",
+  "TakeOdd",
+  "Cut 18 2",
+  "Substitute ! ***",
+  "Substitute ? .!.",
+  "Done",
+]);
