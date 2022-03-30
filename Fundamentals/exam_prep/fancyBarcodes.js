@@ -30,6 +30,7 @@ function solve(arr) {
   let matched = {};
   let barcodesCount = arr.shift();
   let matches = pattern.exec(arr);
+  
   for (let i = 0; i < barcodesCount; i++) {
     if (!arr[i] === matches[i]) {
       console.log(`Invalid barcode`);
