@@ -18,6 +18,7 @@ function solve(arr) {
     •	Print the proper output messages in the proper cases as described in the problem description */
 
   let destination = arr.shift();
+  let newDestination = "";
 
   while (arr[0] !== "Travel") {
     let command = arr.shift().split(":");
@@ -25,27 +26,30 @@ function solve(arr) {
     if (command[0] === "Add Stop") {
       let index = +command[1];
       let string = command[2];
-      if (index >= 0) {
-        destination =
+      if (index !== undefined) {
+        newDestination =
           destination.slice(0, index) + string + destination.slice(index);
-        console.log(destination);
+        console.log(newDestination);
       }
     } else if (command[0] === "Remove Stop") {
       let startIndex = +command[1];
       let endIndex = +command[2];
-      if (startIndex >= 0 && endIndex >= 0) {
-        destination =
-          destination.slice(0, startIndex) + destination.slice(endIndex + 1);
-        console.log(destination);
+      if (startIndex !== undefined && endIndex !== undefined) {
+        newDestination =
+          newDestination.slice(0, startIndex) +
+          newDestination.slice(endIndex + 1);
+        console.log(newDestination);
       }
     } else if (command[0] === "Switch") {
       let oldString = command[1];
       let newString = command[2];
-      destination = destination.replace(oldString, newString);
-      console.log(destination);
+      if (destination.includes(oldString)) {
+        newDestination = newDestination.split(oldString).join(newString);
+        console.log(newDestination);
+      }
     }
   }
-  console.log(`Ready for world tour! Planned stops: ${destination}`);
+  console.log(`Ready for world tour! Planned stops: ${newDestination}`);
 }
 solve([
   "Hawai::Cyprys-Greece",
