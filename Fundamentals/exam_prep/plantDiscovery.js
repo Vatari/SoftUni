@@ -1,35 +1,73 @@
 function solve(arr) {
   let plantCount = +arr.shift();
 
-  let plants = {
-      'name': '', 
-      rarity: '', 
-      rating: 0,
-  };
-  for (let i = 0; i < plantCount; i++) {
-    let [name, rarity] = arr.shift().split("<->");
-    let rating = +arr.shift();
-    plants.name = name;
-    plants.rarity = rarity;
-    plants.rating = rating;
-}
+  let plants = {};
 
+  for (j = 0; j < plantCount; j++) {
+    line = arr.shift();
 
-  for (el of arr) {  
-  let command = arr.shift().split(':')
-    let [name, rating] = arr.shift().split(" - ");
-    
-    if (command[0] === 'Rate') {
-        plants.rating = +rating;
+    let [name, rarity] = line.split("<->");
+    rarity = +rarity;
+    plants[name] = { rarity, rating: [] };
+  }
+
+  while (arr[0] !== "Exhibition") {
+    let line = arr.shift();
+    let index = line.indexOf(":");
+    let command = line.substring(0, index).trim();
+    if (command === "Rate") {
+      if (line.includes("-")) {
+        let [name, rate] = line
+          .substring(index + 1)
+          .trim()
+          .split(" - ");
+        if (plants.hasOwnProperty(name)) {
+          rate = +rate;
+          if (rate > 0) {
+            plants[name].rating.push(+rate);
+          }
+        } else {
+          console.log("error");
         }
-    if (command[0] === 'Update') {
-        plants.rarity = rarity;
+      }
+    } else if (command === "Update") {
+      if (line.includes("-")) {
+        let [name, rarity] = line
+          .substring(index + 1)
+          .trim()
+          .split(" - ");
+        if (plants.hasOwnProperty(name)) {
+          rarity = +rarity;
+          if (rarity > 0) {
+            plants[name].rarity = rarity;
+          }
+        } else {
+          console.log("error");
         }
-    if (command[0] === 'Reset') {
-        plants.rating = 0;
-        }
+      }
+    } else if (command === "Reset") {
+      let name = line.substring(index + 1).trim();
+      if (plants.hasOwnProperty(name)) {
+        plants[name].rating = 0;
+      } else {
+        console.log("error");
+      }
     }
+  }
 
+  console.log("Plants for the exhibition:");
+  for (let name in plants) {
+    console.log(
+      `- ${name}; Rarity: ${plants[name].rarity}; Rating: ${average(
+        plants[name].rating
+      ).toFixed(2)}`
+    );
+  }
+
+  function average(arr) {
+    if (!arr.length) return 0;
+    return arr.reduce((a, b) => a + b, 0) / arr.length;
+  }
 }
 solve([
   "3",
