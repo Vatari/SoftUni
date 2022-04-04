@@ -9,18 +9,28 @@ function solve(arr) {
     
     if (!gladiators[name]) {
 
-        gladiators[name] = [];
+      gladiators[name] = [skill, skillPoints]
+      console.log(gladiators[name][skill]);
+      if (gladiators[name][skill] < skillPoints) {
+        console.log('sdsdasd');
+           gladiators[name].push(skill, skillPoints)
+           gladiators[name][skill] = skillPoints
+         }
+         } 
+         
+         
+         
+         
 
-    } 
-    gladiators[name].push(skill, skillPoints);
+
     
     
-    if (gladiators[name][0].includes(skill)) {
+   /*  if (gladiators[name][0].includes(skill)) {
         if (gladiators[name][1] < skillPoints) {
             gladiators[name][1] = skillPoints;
             
         }
-    }
+    } */
 
 
     //  if (gladiators[name].)
