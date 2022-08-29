@@ -1,7 +1,7 @@
 {
   "name": "Clear Career",
   "version": "1.0.0",
-  "description": "Online Book Library Single Page Application",
+  "description": "Clear Career Single Page Application",
   "main": "index.html",
   "scripts": {
     "test": "mocha tests",
