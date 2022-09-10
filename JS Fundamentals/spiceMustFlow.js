@@ -18,5 +18,5 @@ function spiceMustFlow(mineYield) {
   console.log(daysCount);
   console.log(totalextracted);
 }
-spiceMustFlow(111);
+spiceMustFlow(133);
 spiceMustFlow(450);
