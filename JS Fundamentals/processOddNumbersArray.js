@@ -11,4 +11,4 @@ function processOddNumbers(arr) {
   }
   console.log(oddElementsDoubled(arr));
 }
-processOddNumbers([10, 15, 20, 25]);
+processOddNumbers([10, 33, 20, 25]);
