@@ -6,3 +6,4 @@ function reverseString(str) {
     console.log(newString);
 }
 reverseString('hello');
+reverseString('house');
