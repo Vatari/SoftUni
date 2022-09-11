@@ -14,3 +14,5 @@ function animalType(input) {
   }
 }
 animalType(["snake"]);
+animalType(["rabbit"]);
+
