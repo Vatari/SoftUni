@@ -21,4 +21,4 @@ function ageAndSex (input) {
     }
 
 }
-ageAndSex (["25", "f"]);
+ageAndSex (["20", "f"]);
