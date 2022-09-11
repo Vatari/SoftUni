@@ -19,3 +19,5 @@ function bonusPoints(input) {
   console.log(`${bonus} ${score + bonus}`);
 }
 bonusPoints(["20"]);
+bonusPoints(["50"]);
+
