@@ -8,3 +8,5 @@ function basketballExpenses(input) {
 	console.log(totalSum);
 }
 basketballExpenses(['365']);
+basketballExpenses(['221']);
+
