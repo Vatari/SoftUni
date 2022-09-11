@@ -6,3 +6,5 @@ function characterSequence(input) {
   }
 }
 characterSequence(["softuni"]);
+characterSequence(["javascript"]);
+
