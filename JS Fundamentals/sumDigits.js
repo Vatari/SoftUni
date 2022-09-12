@@ -9,4 +9,3 @@ function sumDigits(num) {
 }
 sumDigits(245678);
 sumDigits(97561);
-sumDigits(543);

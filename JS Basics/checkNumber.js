@@ -14,3 +14,4 @@ function checkNumber (input) {
 
 }
 checkNumber (["201"]);
+checkNumber (["444"]);

@@ -18,4 +18,4 @@ function numberModification(num) {
   }
 }
 
-numberModification(101);
+numberModification(202);
