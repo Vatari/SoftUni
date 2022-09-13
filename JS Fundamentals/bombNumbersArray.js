@@ -9,7 +9,7 @@ function bombNumbers(numbers, bombs) {
       let countToEnd = power * 2 + 1;
 
       numbers.splice(startIndex, countToEnd);
-      i = i - power - 1; //
+      i = i - power - 1; 
     }
   }
   console.log(numbers.reduce((a, b) => a + b, 0));
