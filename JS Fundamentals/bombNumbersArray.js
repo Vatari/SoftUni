@@ -16,4 +16,4 @@ function bombNumbers(numbers, bombs) {
   console.log(numbers.reduce((a, b) => a + b, 0));
 }
 
-bombNumbers([1, 2, 2, 4, 2, 2, 2, 9], [4, 2]);
+bombNumbers([1, 2, 2, 4, 12, 2, 3, 9], [14, 2]);
