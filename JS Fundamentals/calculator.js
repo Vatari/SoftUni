@@ -17,4 +17,4 @@ function calculator(num1, operator, num2) {
   console.log(sum.toFixed(2));
 }
 calculator(5, "+", 10);
-calculator(25.5, "-", 3);
+calculator(25.5, "-", 33);
