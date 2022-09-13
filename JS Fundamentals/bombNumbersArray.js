@@ -5,7 +5,7 @@ function bombNumbers(numbers, bombs) {
     let currentNum = numbers[i];
 
     if (currentNum === target) {
-      let startIndex = Math.max(0, i - power); //math.max in cases where index is -1(outside the array)
+      let startIndex = Math.max(0, i - power); 
       let countToEnd = power * 2 + 1;
 
       numbers.splice(startIndex, countToEnd);
