@@ -12,7 +12,6 @@ function bombNumbers(numbers, bombs) {
       i = i - power - 1; //
     }
   }
-  // console.log(numbers);
   console.log(numbers.reduce((a, b) => a + b, 0));
 }
 
