@@ -33,4 +33,4 @@ function addAndRemoveArray(input) {
   }
 }
 addAndRemoveArray(["add", "add", "add", "add"]);
-addAndRemoveArray(["add", "add", "remove", "add", "add"]);
+addAndRemoveArray(["add", "add", "remove", "add", "add", "remove"]);

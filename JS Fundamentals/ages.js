@@ -16,3 +16,5 @@ function ages(age) {
   }
 }
 ages(20);
+ages(70);
+

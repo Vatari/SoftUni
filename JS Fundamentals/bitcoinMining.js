@@ -37,4 +37,4 @@ function bitcoinMining(minedGold) {
 
   console.log(`Left money: ${money.toFixed(2)} lv.`);
 }
-bitcoinMining([100, 200, 300]);
+bitcoinMining([100, 200, 300, 600]);

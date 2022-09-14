@@ -23,4 +23,4 @@ function wallBuild(arr) {
   console.log(dailyConcrete.join(", "));
   console.log(`${costs} pesos`);
 }
-wallBuild([17, 22, 17, 19, 17]);
+wallBuild([17, 22, 17, 19, 217]);
