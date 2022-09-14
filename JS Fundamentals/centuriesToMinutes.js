@@ -10,3 +10,5 @@ function centuriesToMinutes(century) {
 }
 centuriesToMinutes(1);
 centuriesToMinutes(5);
+centuriesToMinutes(15);
+
