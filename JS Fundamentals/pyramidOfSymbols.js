@@ -8,3 +8,4 @@ function pyramid(n) {
  }
  
  pyramid(50);
+ pyramid(150);
