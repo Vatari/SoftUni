@@ -29,4 +29,4 @@ function login(input) {
 }
 
 login(["sunny", "rainy", "cloudy", "sunny", "not sunny"]);
-login(["Acer", "login", "go", "let me in", "recA"]);
+login(["Test", "login", "go", "let me in", "recA"]);
