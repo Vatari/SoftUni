@@ -20,4 +20,3 @@ function maxNumberInArray(arr) {
 maxNumberInArray([1, 4, 3, 2]);
 maxNumberInArray([14, 24, 3, 19, 15, 17]);
 maxNumberInArray([41, 41, 34, 20]);
-maxNumberInArray([27, 19, 42, 2, 13, 45, 48]);
