@@ -4,3 +4,4 @@ function multiply (num) {
 }
 
 multiply(2);
+multiply(11);
