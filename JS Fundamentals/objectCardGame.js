@@ -21,19 +21,14 @@ function cardGame(arr) {
     K: 13,
     A: 14,
   };
-  // create collection
+
   let players = {};
-  // for every element of arr
+
   for (let line of arr) {
     let [name, cards] = line.split(": ");
 
     cards = cards.split(", ");
 
-    // - parse element
-    // -- split by ':' --> name and cards as string
-    // - store in collection
-    // -- if person is not recorded, create new Set()
-    // -- add new cards to person's set
     if (players.hasOwnProperty(name) == false) {
       players[name] = new Set();
     }
@@ -42,18 +37,15 @@ function cardGame(arr) {
     }
   }
 
-  // - store in collection
-  // for every entry in result collection
   for (let [name, cards] of Object.entries(players)) {
     let power = 0;
-    // - for every card in entry
-    // -- calculate power
+
     for (let card of cards) {
       let cardPower = cardFaces[card[0]];
       let colorPower = colors[card.slice(-1)];
       power += cardPower * colorPower;
     }
-    // print name and total power
+
     console.log(`${name}: ${power}`);
   }
 }

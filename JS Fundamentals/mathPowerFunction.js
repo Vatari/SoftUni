@@ -9,3 +9,5 @@ function mathPowerFunction(num, pow) {
 }
 mathPowerFunction(2, 8);
 mathPowerFunction(3, 4);
+mathPowerFunction(53, 41);
+

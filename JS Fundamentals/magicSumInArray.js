@@ -8,5 +8,4 @@ function magicSumInArray(arr, magicNum) {
   }
 }
 magicSumInArray([1, 7, 6, 2, 19, 23], 8);
-magicSumInArray([14, 20, 60, 13, 7, 19, 8], 27);
-magicSumInArray([1, 2, 3, 4, 5, 6], 6);
+magicSumInArray([14, 20, 60, 13, 7, 19, 8], 217);

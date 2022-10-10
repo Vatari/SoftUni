@@ -10,3 +10,5 @@ function lowerOrUpper(str) {
 }
 lowerOrUpper("L");
 lowerOrUpper("f");
+lowerOrUpper("B");
+

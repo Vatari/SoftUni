@@ -3,4 +3,3 @@ function metersToKilometres(num) {
 }
 metersToKilometres(1852);
 metersToKilometres(798);
-metersToKilometres(80);

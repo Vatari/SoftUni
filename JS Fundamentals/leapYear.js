@@ -6,3 +6,5 @@ function leapYear(year) {
   }
 }
 leapYear(1984);
+leapYear(1979);
+

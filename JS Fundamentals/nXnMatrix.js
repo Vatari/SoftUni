@@ -3,3 +3,5 @@ function nXnMatrix(num) {
 }
 
 nXnMatrix(7);
+nXnMatrix(3);
+
