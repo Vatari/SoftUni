@@ -3,14 +3,12 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
-
 #accordion {
     border: 2px solid #cdc7c7;
     display: inline-block;
     width: 40%;
     font-size: 1.3rem;
 }
-
 #accordion p {
     margin: 1em;
 }
